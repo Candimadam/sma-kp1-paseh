@@ -14,9 +14,8 @@ import {
   Dumbbell,
   Globe,
 } from "lucide-react";
-import extracurricularImage from "@/assets/extracurricular.jpg";
 
-const ExtracurricularSection = () => {
+export const ExtracurricularSection = () => {
   const categories = [
     {
       title: "Seni & Kreativitas",
@@ -65,14 +64,14 @@ const ExtracurricularSection = () => {
   ];
 
   return (
-    <section id="ekstrakurikuler" className="section-padding bg-neutral-50">
-      <div className="container mx-auto container-padding">
+    <section id="ekstrakurikuler" className="py-24 bg-neutral-50">
+      <div className="mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-2 mb-4 text-foreground">
-            Ekstrakurikuler <span className="text-primary">Unggulan</span>
+          <h2 className="text-5xl font-extrabold mb-4 text-primary/80">
+            Ekstrakurikuler <span className="text-blue-500">Unggulan</span>
           </h2>
-          <p className="body-large max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Kembangkan bakat dan minat Anda melalui berbagai kegiatan
             ekstrakurikuler yang menarik dan berprestasi.
           </p>
@@ -82,7 +81,7 @@ const ExtracurricularSection = () => {
         <div className="mb-16">
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <img
-              src={extracurricularImage}
+              src="https://images.unsplash.com/photo-1518614368389-5160c0b0de72"
               alt="Ekstrakurikuler SMA Merdeka"
               className="w-full h-[400px] object-cover"
             />
@@ -104,7 +103,7 @@ const ExtracurricularSection = () => {
           {categories.map((category, index) => (
             <Card
               key={index}
-              className="card-soft-shadow hover:card-hover-shadow transition-all duration-300"
+              className="shadow-md hover:shadow-lg transition-all duration-300"
             >
               <CardContent className="p-8">
                 {/* Category Header */}
@@ -114,7 +113,7 @@ const ExtracurricularSection = () => {
                   >
                     <category.icon className="h-6 w-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground">
+                  <h3 className="text-xl font-bold text-primary/80">
                     {category.title}
                   </h3>
                 </div>
@@ -126,10 +125,10 @@ const ExtracurricularSection = () => {
                       key={idx}
                       className="flex items-center space-x-3 p-3 rounded-lg hover:bg-neutral-100 transition-colors cursor-pointer group"
                     >
-                      <div className="w-8 h-8 bg-neutral-200 rounded-lg flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+                      <div className="w-8 h-8 bg-neutral-200 rounded-lg flex items-center justify-center group-hover:bg-blue-500 group-hover:text-white transition-colors">
                         <activity.icon className="h-4 w-4" />
                       </div>
-                      <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
+                      <span className="text-sm font-medium text-primary/80 group-hover:text-blue-500 transition-colors">
                         {activity.name}
                       </span>
                     </div>
@@ -142,18 +141,32 @@ const ExtracurricularSection = () => {
 
         {/* Achievement Highlights */}
         <div className="mt-16 text-center">
-          <h3 className="heading-3 mb-8 text-foreground">Prestasi Terbaru</h3>
+          <h3 className="text-3xl font-semibold mb-8 text-primary/80">
+            Prestasi Terbaru
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge
+              variant="secondary"
+              className="px-4 py-2 text-sm font-semibold text-muted-foreground"
+            >
               🥇 Juara 1 Olimpiade Fisika Tingkat Provinsi
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge
+              variant="secondary"
+              className="px-4 py-2 text-sm font-semibold text-muted-foreground"
+            >
               🏆 Juara 2 Lomba Debat Bahasa Inggris
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge
+              variant="secondary"
+              className="px-4 py-2 text-sm font-semibold text-muted-foreground"
+            >
               🎵 Juara 3 Festival Paduan Suara Nasional
             </Badge>
-            <Badge variant="secondary" className="px-4 py-2 text-sm">
+            <Badge
+              variant="secondary"
+              className="px-4 py-2 text-sm font-semibold text-muted-foreground"
+            >
               ⚽ Juara 1 Turnamen Futsal Antar SMA
             </Badge>
           </div>
@@ -162,5 +175,3 @@ const ExtracurricularSection = () => {
     </section>
   );
 };
-
-export default ExtracurricularSection;

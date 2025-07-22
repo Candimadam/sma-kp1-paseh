@@ -1,8 +1,8 @@
 import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
 
-const Footer = () => {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
-/
+
   // Custom SVG icons for social media
   const FacebookIcon = () => (
     <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,14 +41,14 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-neutral-900 text-white">
+    <footer className="bg-[#0c141d] text-white">
       {/* Main Footer */}
-      <div className="container mx-auto container-padding py-16">
+      <div className="mx-auto px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* School Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4">
-              <GraduationCap className="h-8 w-8 text-primary" />
+              <GraduationCap className="h-8 w-8 text-blue-500" />
               <span className="text-xl font-bold">SMA Merdeka</span>
             </div>
             <p className="text-neutral-300 mb-6 leading-relaxed">
@@ -85,7 +85,7 @@ const Footer = () => {
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-neutral-300 hover:text-primary transition-colors text-left"
+                    className="text-neutral-300 hover:text-blue-500 transition-colors text-left"
                   >
                     {link.name}
                   </button>
@@ -111,7 +111,7 @@ const Footer = () => {
             <h3 className="font-semibold mb-4">Kontak</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-blue-500 mt-0.5 flex-shrink-0" />
                 <span className="text-neutral-300 text-sm">
                   Jl. Pendidikan No. 123
                   <br />
@@ -119,13 +119,13 @@ const Footer = () => {
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary" />
+                <Phone className="h-5 w-5 text-blue-500" />
                 <span className="text-neutral-300 text-sm">
                   (021) 7654-3210
                 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-primary" />
+                <Mail className="h-5 w-5 text-blue-500" />
                 <span className="text-neutral-300 text-sm">
                   info@smamerdeka.sch.id
                 </span>
@@ -137,19 +137,19 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-neutral-800">
-        <div className="container mx-auto container-padding py-6">
+        <div className="mx-auto px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-neutral-400">
               © {currentYear} SMA Merdeka. Hak Cipta Dilindungi.
             </div>
             <div className="flex space-x-6 text-sm text-neutral-400">
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-blue-500 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-blue-500 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-primary transition-colors">
+              <a href="#" className="hover:text-blue-500 transition-colors">
                 Sitemap
               </a>
             </div>
@@ -159,5 +159,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

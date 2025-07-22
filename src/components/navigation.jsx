@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, GraduationCap, LogIn } from "lucide-react";
+import { Menu, X, GraduationCap, UserPenIcon } from "lucide-react";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,21 +40,23 @@ export const Navigation = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto container-padding">
-        <div className="flex items-center justify-between h-16">
+      <div className="">
+        <div className="flex px-6 items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <GraduationCap className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">SMA KP 1 PASEH</span>
+          <div className="flex items-center space-x-2 md:flex-1/5">
+            <GraduationCap className="h-8 w-8 text-blue-600" />
+            <span className="text-xl font-bold text-primary/80">
+              SMA KP 1 PASEH
+            </span>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center justify-center space-x-8 md:flex-3/5">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium text-primary/80 hover:text-blue-500 transition-colors"
               >
                 {item.label}
               </button>
@@ -62,10 +64,10 @@ export const Navigation = () => {
           </div>
 
           {/* Login Button */}
-          <div className="hidden md:flex">
+          <div className="hidden md:flex flex-1/5 justify-end">
             <Button variant="outline" size="sm">
-              <LogIn className="h-4 w-4" />
-              Masuk
+              <UserPenIcon className="h-4 w-4" />
+              Registrasi Sekarang
             </Button>
           </div>
 
@@ -93,7 +95,7 @@ export const Navigation = () => {
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-accent rounded-md w-full text-left transition-colors"
+                  className="block px-3 py-2 text-base font-medium text-primary/80 hover:text-blue-500 hover:bg-accent rounded-md w-full text-left transition-colors"
                 >
                   {item.label}
                 </button>

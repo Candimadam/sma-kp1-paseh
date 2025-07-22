@@ -11,7 +11,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 
-const ContactSection = () => {
+export const ContactSection = () => {
   const contactInfo = [
     {
       icon: MapPin,
@@ -64,14 +64,14 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="kontak" className="section-padding bg-background">
-      <div className="container mx-auto container-padding">
+    <section id="kontak" className="py-24 bg-background">
+      <div className="mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-2 mb-4 text-foreground">
-            Alamat & <span className="text-primary">Kontak Sekolah</span>
+          <h2 className="text-5xl font-extrabold mb-4 text-primary/80">
+            Alamat & <span className="text-blue-500">Kontak Sekolah</span>
           </h2>
-          <p className="body-large max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Hubungi kami untuk informasi lebih lanjut tentang pendaftaran,
             kurikulum, atau kegiatan sekolah.
           </p>
@@ -84,24 +84,28 @@ const ContactSection = () => {
               {contactInfo.map((contact, index) => (
                 <Card
                   key={index}
-                  className="card-soft-shadow hover:card-hover-shadow transition-all duration-300"
+                  className="shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                          <contact.icon className="h-6 w-6 text-primary" />
+                          <contact.icon className="h-6 w-6 text-blue-500" />
                         </div>
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-semibold text-foreground mb-2">
+                        <h3 className="font-semibold text-primary/80 mb-2">
                           {contact.title}
                         </h3>
                         <p className="text-sm text-muted-foreground mb-4 whitespace-pre-line leading-relaxed">
                           {contact.info}
                         </p>
                         {contact.action && (
-                          <Button variant="outline" size="sm">
+                          <Button
+                            variant="outline"
+                            className="text-primary/80"
+                            size="sm"
+                          >
                             {contact.action}
                             <ExternalLink className="h-4 w-4 ml-2" />
                           </Button>
@@ -137,7 +141,7 @@ const ContactSection = () => {
             {/* Social Media */}
             <Card className="card-soft-shadow">
               <CardContent className="p-6">
-                <h3 className="font-semibold text-foreground mb-6">
+                <h3 className="font-semibold text-primary/80 mb-6">
                   Ikuti Media Sosial Kami
                 </h3>
                 <div className="space-y-4">
@@ -153,7 +157,7 @@ const ContactSection = () => {
                         <social.icon className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <div className="font-medium text-foreground group-hover:text-primary transition-colors">
+                        <div className="font-medium text-primary/80 group-hover:text-blue-500 transition-colors">
                           {social.name}
                         </div>
                         <div className="text-sm text-muted-foreground">
@@ -169,15 +173,15 @@ const ContactSection = () => {
             {/* Quick Info */}
             <Card className="card-soft-shadow">
               <CardContent className="p-6">
-                <h3 className="font-semibold text-foreground mb-4">
+                <h3 className="font-semibold text-primary/80 mb-4">
                   Informasi Cepat
                 </h3>
                 <div className="space-y-4">
                   <div className="p-4 bg-primary/5 rounded-lg">
-                    <div className="font-medium text-primary mb-1">
+                    <div className="font-medium text-blue-500 mb-1">
                       Hotline PPDB
                     </div>
-                    <div className="text-sm text-foreground">
+                    <div className="text-sm text-primary/80">
                       📞 0811-1234-5678
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
@@ -185,11 +189,11 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="p-4 bg-success/5 rounded-lg">
-                    <div className="font-medium text-success mb-1">
+                  <div className="p-4 bg-orange-500/5 rounded-lg">
+                    <div className="font-medium text-orange-500 mb-1">
                       WhatsApp Official
                     </div>
-                    <div className="text-sm text-foreground">
+                    <div className="text-sm text-primary/80">
                       💬 0812-3456-7890
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
@@ -197,11 +201,11 @@ const ContactSection = () => {
                     </div>
                   </div>
 
-                  <div className="p-4 bg-warning/5 rounded-lg">
-                    <div className="font-medium text-warning mb-1">
+                  <div className="p-4 bg-yellow-500/5 rounded-lg">
+                    <div className="font-medium text-yellow-500 mb-1">
                       Email PPDB
                     </div>
-                    <div className="text-sm text-foreground">
+                    <div className="text-sm text-primary/80">
                       ✉️ ppdb@smamerdeka.sch.id
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
@@ -223,5 +227,3 @@ const ContactSection = () => {
     </section>
   );
 };
-
-export default ContactSection;

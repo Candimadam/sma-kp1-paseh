@@ -30,8 +30,8 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="tentang" className="section-padding bg-neutral-50">
-      <div className="container mx-auto container-padding">
+    <section id="tentang" className="py-24 bg-neutral-50">
+      <div className="mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
           <div className="order-2 lg:order-1">
@@ -48,15 +48,15 @@ export const AboutSection = () => {
           {/* Content */}
           <div className="order-1 lg:order-2">
             <div className="mb-8">
-              <h2 className="heading-2 mb-4 text-foreground">
-                Tentang <span className="text-primary">SMA Merdeka</span>
-              </h2>
-              <p className="body-large mb-6">
+              <h1 className="mb-2 text-primary/80 text-5xl font-extrabold">
+                Tentang <span className="text-blue-500">SMA Kp1 Paseh</span>
+              </h1>
+              <p className="text-lg mb-6 text-muted-foreground">
                 SMA Merdeka adalah institusi pendidikan yang berkomitmen untuk
                 mengembangkan potensi setiap siswa menjadi individu yang cerdas,
                 berkarakter, dan siap menghadapi masa depan.
               </p>
-              <p className="body-medium">
+              <p className="text-muted-foreground ">
                 Dengan fasilitas modern, tenaga pengajar berkualitas, dan
                 kurikulum yang mengikuti perkembangan zaman, kami memberikan
                 pendidikan terbaik untuk generasi penerus bangsa.
@@ -68,17 +68,17 @@ export const AboutSection = () => {
               {values.map((value, index) => (
                 <Card
                   key={index}
-                  className="card-soft-shadow hover:card-hover-shadow transition-all duration-300 cursor-pointer"
+                  className="shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <value.icon className="h-6 w-6 text-primary" />
+                          <value.icon className="h-6 w-6 text-blue-500" />
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-foreground mb-2">
+                        <h3 className="font-semibold text-primary/80 mb-2">
                           {value.title}
                         </h3>
                         <p className="text-sm text-muted-foreground leading-relaxed">

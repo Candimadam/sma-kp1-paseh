@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calculator, Atom, Users, Palette, Globe, Cpu } from "lucide-react";
 
-const MajorsSection = () => {
+export const MajorsSection = () => {
   const majors = [
     {
       icon: Calculator,
@@ -61,14 +61,14 @@ const MajorsSection = () => {
   ];
 
   return (
-    <section id="jurusan" className="section-padding bg-background">
-      <div className="container mx-auto container-padding">
+    <section id="jurusan" className="py-24 bg-background">
+      <div className="mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-2 mb-4 text-foreground">
-            Jurusan <span className="text-primary">Sekolah</span>
+          <h2 className="text-5xl font-extrabold mb-4 text-primary/80">
+            Jurusan <span className="text-blue-500">Sekolah</span>
           </h2>
-          <p className="body-large max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Pilih jurusan yang sesuai dengan minat dan bakat Anda. Setiap
             jurusan dirancang untuk mengoptimalkan potensi siswa.
           </p>
@@ -79,7 +79,7 @@ const MajorsSection = () => {
           {majors.map((major, index) => (
             <Card
               key={index}
-              className="card-soft-shadow hover:card-hover-shadow transition-all duration-300 hover:scale-105 group cursor-pointer"
+              className="shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 group cursor-pointer"
             >
               <CardHeader className="text-center pb-4">
                 <div className="mx-auto mb-4 relative">
@@ -89,7 +89,7 @@ const MajorsSection = () => {
                     <major.icon className="h-8 w-8 text-white" />
                   </div>
                 </div>
-                <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                <CardTitle className="text-xl font-bold text-primary/80 group-hover:text-blue-500 transition-colors">
                   {major.title}
                 </CardTitle>
                 <p className="text-sm text-muted-foreground font-medium">
@@ -103,7 +103,7 @@ const MajorsSection = () => {
 
                 {/* Subjects */}
                 <div className="space-y-2 mb-6">
-                  <p className="text-xs font-semibold text-foreground uppercase tracking-wide">
+                  <p className="text-xs font-semibold text-primary/80 uppercase tracking-wide">
                     Mata Pelajaran Utama:
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -121,7 +121,7 @@ const MajorsSection = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                  className="mt-auto w-full group-hover:bg-blue-500 group-hover:text-white transition-all duration-300"
                 >
                   Pelajari Lebih Lanjut
                 </Button>
@@ -132,11 +132,15 @@ const MajorsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="body-medium mb-6">
+          <p className="text-muted-foreground mb-6">
             Masih bingung memilih jurusan? Konsultasikan dengan konselor
             akademik kami.
           </p>
-          <Button variant="default" size="lg">
+          <Button
+            variant="default"
+            className="bg-blue-500 hover:bg-blue-500/90 text-white"
+            size="lg"
+          >
             Konsultasi Jurusan
           </Button>
         </div>
@@ -144,5 +148,3 @@ const MajorsSection = () => {
     </section>
   );
 };
-
-export default MajorsSection;

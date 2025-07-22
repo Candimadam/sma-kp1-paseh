@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Award, BookOpen } from "lucide-react";
-import schoolBuilding from "@/assets/school-building.jpg";
 
-const HeroSection = () => {
+export const HeroSection = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
@@ -15,30 +14,30 @@ const HeroSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={schoolBuilding}
+          src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a"
           alt="SMA Merdeka Building"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/80 to-blue-500/60" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto container-padding text-center text-white">
+      <div className="relative z-10 mx-auto px-8 text-center text-white">
         <div className="max-w-4xl mx-auto">
           {/* Main Heading */}
-          <h1 className="heading-1 mb-6 animate-fade-in">
+          <h1 className="scroll-m-20 text-center text-6xl mb-6 font-extrabold tracking-tight text-balance">
             Selamat Datang di
-            <span className="block text-yellow-300">SMA Merdeka</span>
+            <span className="block text-yellow-300">SMA KP1 PASEH</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="body-large mb-8 text-white/90 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
             Membangun generasi unggul dengan pendidikan berkualitas, karakter
             kuat, dan masa depan gemilang untuk Indonesia yang merdeka.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               variant="cta"
               size="xl"
@@ -94,5 +93,3 @@ const HeroSection = () => {
     </section>
   );
 };
-
-export default HeroSection;

@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
 
-const ActivitiesSection = () => {
+export const ActivitiesSection = () => {
   const activities = [
     {
       title: "Pentas Seni Tahunan",
@@ -85,14 +85,14 @@ const ActivitiesSection = () => {
   };
 
   return (
-    <section id="kegiatan" className="section-padding bg-background">
-      <div className="container mx-auto container-padding">
+    <section id="kegiatan" className="py-24 bg-background">
+      <div className="mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="heading-2 mb-4 text-foreground">
-            Kegiatan <span className="text-primary">Sekolah</span>
+          <h2 className="text-5xl font-extrabold mb-4 text-primary/80">
+            Kegiatan <span className="text-blue-500">Sekolah</span>
           </h2>
-          <p className="body-large max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Ikuti berbagai kegiatan menarik yang dirancang untuk mengembangkan
             potensi akademik, sosial, dan kepemimpinan siswa.
           </p>
@@ -103,7 +103,7 @@ const ActivitiesSection = () => {
           {activities.map((activity, index) => (
             <Card
               key={index}
-              className="card-soft-shadow hover:card-hover-shadow transition-all duration-300 hover:scale-105 group overflow-hidden"
+              className="shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 group overflow-hidden"
             >
               {/* Image */}
               <div className="relative h-48 overflow-hidden">
@@ -125,7 +125,7 @@ const ActivitiesSection = () => {
 
               <CardContent className="p-6">
                 {/* Title */}
-                <h3 className="font-bold text-lg text-foreground mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-bold text-lg text-primary/80 mb-3 group-hover:text-blue-500 transition-colors">
                   {activity.title}
                 </h3>
 
@@ -137,15 +137,15 @@ const ActivitiesSection = () => {
                 {/* Event Details */}
                 <div className="space-y-2 mb-6">
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4 mr-2 text-primary" />
+                    <Calendar className="h-4 w-4 mr-2 text-blue-500" />
                     {activity.date}
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <Clock className="h-4 w-4 mr-2 text-primary" />
+                    <Clock className="h-4 w-4 mr-2 text-blue-500" />
                     {activity.time}
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <MapPin className="h-4 w-4 mr-2 text-primary" />
+                    <MapPin className="h-4 w-4 mr-2 text-blue-500" />
                     {activity.location}
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const ActivitiesSection = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                  className="w-full group-hover:bg-blue-500 group-hover:text-white transition-all duration-300"
                 >
                   Daftar Kegiatan
                   <ArrowRight className="h-4 w-4 ml-2" />
@@ -166,7 +166,11 @@ const ActivitiesSection = () => {
 
         {/* View All CTA */}
         <div className="text-center mt-12">
-          <Button variant="default" size="lg">
+          <Button
+            variant="default"
+            className="bg-blue-500 hover:bg-blue-500/90 text-white"
+            size="lg"
+          >
             Lihat Semua Kegiatan
             <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
@@ -175,5 +179,3 @@ const ActivitiesSection = () => {
     </section>
   );
 };
-
-export default ActivitiesSection;
