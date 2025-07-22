@@ -1,11 +1,11 @@
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Award, BookOpen } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { ArrowRight, Users, Award, BookOpen } from 'lucide-react';
 
 export const HeroSection = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -41,7 +41,7 @@ export const HeroSection = () => {
             <Button
               variant="cta"
               size="xl"
-              onClick={() => scrollToSection("#penerimaan")}
+              onClick={() => scrollToSection('#penerimaan')}
               className="group"
             >
               Daftar Sekarang
@@ -50,7 +50,7 @@ export const HeroSection = () => {
             <Button
               variant="outline"
               size="xl"
-              onClick={() => scrollToSection("#tentang")}
+              onClick={() => scrollToSection('#tentang')}
               className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm"
             >
               Pelajari Lebih Lanjut

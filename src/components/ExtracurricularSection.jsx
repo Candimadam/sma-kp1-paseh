@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import {
   Music,
   Palette,
@@ -13,52 +13,52 @@ import {
   Gamepad2,
   Dumbbell,
   Globe,
-} from "lucide-react";
+} from 'lucide-react';
 
 export const ExtracurricularSection = () => {
   const categories = [
     {
-      title: "Seni & Kreativitas",
+      title: 'Seni & Kreativitas',
       icon: Palette,
-      color: "bg-purple-500",
+      color: 'bg-purple-500',
       activities: [
-        { name: "Paduan Suara", icon: Music },
-        { name: "Seni Lukis", icon: Palette },
-        { name: "Fotografi", icon: Camera },
-        { name: "Teater", icon: Mic },
+        { name: 'Paduan Suara', icon: Music },
+        { name: 'Seni Lukis', icon: Palette },
+        { name: 'Fotografi', icon: Camera },
+        { name: 'Teater', icon: Mic },
       ],
     },
     {
-      title: "Olahraga",
+      title: 'Olahraga',
       icon: Trophy,
-      color: "bg-orange-500",
+      color: 'bg-orange-500',
       activities: [
-        { name: "Basket", icon: Trophy },
-        { name: "Futsal", icon: Zap },
-        { name: "Voli", icon: Users },
-        { name: "Badminton", icon: Dumbbell },
+        { name: 'Basket', icon: Trophy },
+        { name: 'Futsal', icon: Zap },
+        { name: 'Voli', icon: Users },
+        { name: 'Badminton', icon: Dumbbell },
       ],
     },
     {
-      title: "Akademik",
+      title: 'Akademik',
       icon: BookOpen,
-      color: "bg-blue-500",
+      color: 'bg-blue-500',
       activities: [
-        { name: "Olimpiade Sains", icon: BookOpen },
-        { name: "Debat Bahasa Inggris", icon: Globe },
-        { name: "Robotika", icon: Zap },
-        { name: "Jurnalistik", icon: Camera },
+        { name: 'Olimpiade Sains', icon: BookOpen },
+        { name: 'Debat Bahasa Inggris', icon: Globe },
+        { name: 'Robotika', icon: Zap },
+        { name: 'Jurnalistik', icon: Camera },
       ],
     },
     {
-      title: "Sosial & Kepemimpinan",
+      title: 'Sosial & Kepemimpinan',
       icon: Heart,
-      color: "bg-green-500",
+      color: 'bg-green-500',
       activities: [
-        { name: "PMR (Palang Merah Remaja)", icon: Heart },
-        { name: "OSIS", icon: Users },
-        { name: "Pramuka", icon: Trophy },
-        { name: "Relawan Sosial", icon: Heart },
+        { name: 'PMR (Palang Merah Remaja)', icon: Heart },
+        { name: 'OSIS', icon: Users },
+        { name: 'Pramuka', icon: Trophy },
+        { name: 'Relawan Sosial', icon: Heart },
       ],
     },
   ];

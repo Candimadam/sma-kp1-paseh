@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import {
   MapPin,
   Phone,
@@ -9,32 +9,32 @@ import {
   Instagram,
   Youtube,
   ExternalLink,
-} from "lucide-react";
+} from 'lucide-react';
 
 export const ContactSection = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Alamat",
-      info: "Jl. Pendidikan No. 123, Kelurahan Merdeka, Kecamatan Sukamaju, Jakarta Selatan 12345",
-      action: "Lihat di Maps",
+      title: 'Alamat',
+      info: 'Jl. Pendidikan No. 123, Kelurahan Merdeka, Kecamatan Sukamaju, Jakarta Selatan 12345',
+      action: 'Lihat di Maps',
     },
     {
       icon: Phone,
-      title: "Telepon",
-      info: "(021) 7654-3210 / (021) 7654-3211",
-      action: "Hubungi Sekarang",
+      title: 'Telepon',
+      info: '(021) 7654-3210 / (021) 7654-3211',
+      action: 'Hubungi Sekarang',
     },
     {
       icon: Mail,
-      title: "Email",
-      info: "info@smamerdeka.sch.id / ppdb@smamerdeka.sch.id",
-      action: "Kirim Email",
+      title: 'Email',
+      info: 'info@smamerdeka.sch.id / ppdb@smamerdeka.sch.id',
+      action: 'Kirim Email',
     },
     {
       icon: Clock,
-      title: "Jam Operasional",
-      info: "Senin - Jumat: 07.00 - 16.00 WIB\nSabtu: 07.00 - 12.00 WIB",
+      title: 'Jam Operasional',
+      info: 'Senin - Jumat: 07.00 - 16.00 WIB\nSabtu: 07.00 - 12.00 WIB',
       action: null,
     },
   ];
@@ -42,24 +42,24 @@ export const ContactSection = () => {
   const socialMedia = [
     {
       icon: Facebook,
-      name: "Facebook",
-      handle: "@SMAMerdeka",
-      url: "#",
-      color: "bg-blue-600 hover:bg-blue-700",
+      name: 'Facebook',
+      handle: '@SMAMerdeka',
+      url: '#',
+      color: 'bg-blue-600 hover:bg-blue-700',
     },
     {
       icon: Instagram,
-      name: "Instagram",
-      handle: "@sma_merdeka",
-      url: "#",
-      color: "bg-pink-600 hover:bg-pink-700",
+      name: 'Instagram',
+      handle: '@sma_merdeka',
+      url: '#',
+      color: 'bg-pink-600 hover:bg-pink-700',
     },
     {
       icon: Youtube,
-      name: "YouTube",
-      handle: "SMA Merdeka Official",
-      url: "#",
-      color: "bg-red-600 hover:bg-red-700",
+      name: 'YouTube',
+      handle: 'SMA Merdeka Official',
+      url: '#',
+      color: 'bg-red-600 hover:bg-red-700',
     },
   ];
 

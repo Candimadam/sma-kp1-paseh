@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, GraduationCap, UserPenIcon } from "lucide-react";
+import { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Menu, X, GraduationCap, UserPenIcon } from 'lucide-react';
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,23 +11,23 @@ export const Navigation = () => {
       setIsScrolled(window.scrollY > 10);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navItems = [
-    { href: "#tentang", label: "Tentang Sekolah" },
-    { href: "#jurusan", label: "Jurusan" },
-    { href: "#ekstrakurikuler", label: "Ekstrakurikuler" },
-    { href: "#kegiatan", label: "Kegiatan" },
-    { href: "#penerimaan", label: "Penerimaan" },
-    { href: "#kontak", label: "Kontak" },
+    { href: '#tentang', label: 'Tentang Sekolah' },
+    { href: '#jurusan', label: 'Jurusan' },
+    { href: '#ekstrakurikuler', label: 'Ekstrakurikuler' },
+    { href: '#kegiatan', label: 'Kegiatan' },
+    { href: '#penerimaan', label: 'Penerimaan' },
+    { href: '#kontak', label: 'Kontak' },
   ];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
   };
@@ -36,8 +36,8 @@ export const Navigation = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMenuOpen
-          ? "bg-background/95 backdrop-blur-sm border-b shadow-sm"
-          : "bg-transparent"
+          ? 'bg-background/95 backdrop-blur-sm border-b shadow-sm'
+          : 'bg-transparent'
       }`}
     >
       <div className="">

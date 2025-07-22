@@ -1,87 +1,87 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Calendar, MapPin, Clock, ArrowRight } from 'lucide-react';
 
 export const ActivitiesSection = () => {
   const activities = [
     {
-      title: "Pentas Seni Tahunan",
-      date: "15 Desember 2024",
-      time: "19.00 WIB",
-      location: "Aula SMA Merdeka",
+      title: 'Pentas Seni Tahunan',
+      date: '15 Desember 2024',
+      time: '19.00 WIB',
+      location: 'Aula SMA Merdeka',
       description:
-        "Pertunjukan seni dari berbagai ekstrakurikuler menampilkan karya terbaik siswa dalam bidang musik, tari, dan teater.",
+        'Pertunjukan seni dari berbagai ekstrakurikuler menampilkan karya terbaik siswa dalam bidang musik, tari, dan teater.',
       image:
-        "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Seni & Budaya",
+        'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Seni & Budaya',
     },
     {
-      title: "Science Fair 2024",
-      date: "8 Januari 2025",
-      time: "08.00 WIB",
-      location: "Laboratorium & Halaman Sekolah",
+      title: 'Science Fair 2024',
+      date: '8 Januari 2025',
+      time: '08.00 WIB',
+      location: 'Laboratorium & Halaman Sekolah',
       description:
-        "Pameran ilmiah tahunan yang menampilkan proyek penelitian dan inovasi siswa dari berbagai jurusan.",
+        'Pameran ilmiah tahunan yang menampilkan proyek penelitian dan inovasi siswa dari berbagai jurusan.',
       image:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Akademik",
+        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Akademik',
     },
     {
-      title: "Turnamen Olahraga Antar Kelas",
-      date: "22 Januari 2025",
-      time: "07.30 WIB",
-      location: "Lapangan Olahraga",
+      title: 'Turnamen Olahraga Antar Kelas',
+      date: '22 Januari 2025',
+      time: '07.30 WIB',
+      location: 'Lapangan Olahraga',
       description:
-        "Kompetisi olahraga yang mempertandingkan berbagai cabang seperti basket, voli, futsal, dan badminton.",
+        'Kompetisi olahraga yang mempertandingkan berbagai cabang seperti basket, voli, futsal, dan badminton.',
       image:
-        "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Olahraga",
+        'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Olahraga',
     },
     {
-      title: "Workshop Kepemimpinan",
-      date: "5 Februari 2025",
-      time: "13.00 WIB",
-      location: "Ruang Multimedia",
+      title: 'Workshop Kepemimpinan',
+      date: '5 Februari 2025',
+      time: '13.00 WIB',
+      location: 'Ruang Multimedia',
       description:
-        "Pelatihan kepemimpinan untuk pengurus OSIS dan MPK dalam mengembangkan kemampuan organisasi.",
+        'Pelatihan kepemimpinan untuk pengurus OSIS dan MPK dalam mengembangkan kemampuan organisasi.',
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Kepemimpinan",
+        'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Kepemimpinan',
     },
     {
-      title: "Bakti Sosial",
-      date: "12 Februari 2025",
-      time: "06.00 WIB",
-      location: "Desa Suka Maju",
+      title: 'Bakti Sosial',
+      date: '12 Februari 2025',
+      time: '06.00 WIB',
+      location: 'Desa Suka Maju',
       description:
-        "Kegiatan pengabdian masyarakat dengan memberikan bantuan dan edukasi kepada masyarakat sekitar.",
+        'Kegiatan pengabdian masyarakat dengan memberikan bantuan dan edukasi kepada masyarakat sekitar.',
       image:
-        "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Sosial",
+        'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Sosial',
     },
     {
-      title: "Study Tour",
-      date: "20 Februari 2025",
-      time: "05.00 WIB",
-      location: "Museum Nasional & Taman Mini",
+      title: 'Study Tour',
+      date: '20 Februari 2025',
+      time: '05.00 WIB',
+      location: 'Museum Nasional & Taman Mini',
       description:
-        "Kunjungan edukatif untuk memperluas wawasan siswa tentang sejarah dan kebudayaan Indonesia.",
+        'Kunjungan edukatif untuk memperluas wawasan siswa tentang sejarah dan kebudayaan Indonesia.',
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400&h=250",
-      category: "Edukasi",
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=400&h=250',
+      category: 'Edukasi',
     },
   ];
 
   const getCategoryColor = (category) => {
     const colors = {
-      "Seni & Budaya": "bg-purple-100 text-purple-700",
-      Akademik: "bg-blue-100 text-blue-700",
-      Olahraga: "bg-orange-100 text-orange-700",
-      Kepemimpinan: "bg-green-100 text-green-700",
-      Sosial: "bg-pink-100 text-pink-700",
-      Edukasi: "bg-indigo-100 text-indigo-700",
+      'Seni & Budaya': 'bg-purple-100 text-purple-700',
+      Akademik: 'bg-blue-100 text-blue-700',
+      Olahraga: 'bg-orange-100 text-orange-700',
+      Kepemimpinan: 'bg-green-100 text-green-700',
+      Sosial: 'bg-pink-100 text-pink-700',
+      Edukasi: 'bg-indigo-100 text-indigo-700',
     };
-    return colors[category] || "bg-gray-100 text-gray-700";
+    return colors[category] || 'bg-gray-100 text-gray-700';
   };
 
   return (

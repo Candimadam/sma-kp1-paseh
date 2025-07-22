@@ -1,4 +1,4 @@
-import { GraduationCap, Mail, Phone, MapPin } from "lucide-react";
+import { GraduationCap, Mail, Phone, MapPin } from 'lucide-react';
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,20 +23,20 @@ export const Footer = () => {
   );
 
   const quickLinks = [
-    { name: "Tentang Sekolah", href: "#tentang" },
-    { name: "Jurusan", href: "#jurusan" },
-    { name: "Ekstrakurikuler", href: "#ekstrakurikuler" },
-    { name: "Kegiatan", href: "#kegiatan" },
-    { name: "Penerimaan", href: "#penerimaan" },
-    { name: "Kontak", href: "#kontak" },
+    { name: 'Tentang Sekolah', href: '#tentang' },
+    { name: 'Jurusan', href: '#jurusan' },
+    { name: 'Ekstrakurikuler', href: '#ekstrakurikuler' },
+    { name: 'Kegiatan', href: '#kegiatan' },
+    { name: 'Penerimaan', href: '#penerimaan' },
+    { name: 'Kontak', href: '#kontak' },
   ];
 
-  const programs = ["MIPA", "IPS", "Bahasa", "TKJ", "Seni", "Program Unggulan"];
+  const programs = ['MIPA', 'IPS', 'Bahasa', 'TKJ', 'Seni', 'Program Unggulan'];
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

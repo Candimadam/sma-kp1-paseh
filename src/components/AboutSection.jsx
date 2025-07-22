@@ -1,31 +1,31 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Target, Heart, Trophy, Globe } from "lucide-react";
+import { Card, CardContent } from '@/components/ui/card';
+import { Target, Heart, Trophy, Globe } from 'lucide-react';
 
 export const AboutSection = () => {
   const values = [
     {
       icon: Target,
-      title: "Visi",
+      title: 'Visi',
       description:
-        "Menjadi sekolah unggul yang menghasilkan lulusan berkarakter, berprestasi, dan siap menghadapi tantangan global.",
+        'Menjadi sekolah unggul yang menghasilkan lulusan berkarakter, berprestasi, dan siap menghadapi tantangan global.',
     },
     {
       icon: Heart,
-      title: "Misi",
+      title: 'Misi',
       description:
-        "Menyelenggarakan pendidikan berkualitas dengan mengembangkan potensi siswa secara holistik.",
+        'Menyelenggarakan pendidikan berkualitas dengan mengembangkan potensi siswa secara holistik.',
     },
     {
       icon: Trophy,
-      title: "Prestasi",
+      title: 'Prestasi',
       description:
-        "Meraih berbagai penghargaan tingkat regional dan nasional dalam bidang akademik dan non-akademik.",
+        'Meraih berbagai penghargaan tingkat regional dan nasional dalam bidang akademik dan non-akademik.',
     },
     {
       icon: Globe,
-      title: "Global",
+      title: 'Global',
       description:
-        "Mempersiapkan siswa dengan wawasan global dan kemampuan berkompetisi di era digital.",
+        'Mempersiapkan siswa dengan wawasan global dan kemampuan berkompetisi di era digital.',
     },
   ];
 

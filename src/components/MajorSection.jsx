@@ -1,62 +1,62 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Calculator, Atom, Users, Palette, Globe, Cpu } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Calculator, Atom, Users, Palette, Globe, Cpu } from 'lucide-react';
 
 export const MajorsSection = () => {
   const majors = [
     {
       icon: Calculator,
-      title: "MIPA",
-      subtitle: "Matematika dan Ilmu Pengetahuan Alam",
+      title: 'MIPA',
+      subtitle: 'Matematika dan Ilmu Pengetahuan Alam',
       description:
-        "Program studi yang fokus pada pengembangan kemampuan analitis dan pemecahan masalah dalam bidang sains dan matematika.",
-      subjects: ["Matematika", "Fisika", "Kimia", "Biologi"],
-      color: "bg-blue-500",
+        'Program studi yang fokus pada pengembangan kemampuan analitis dan pemecahan masalah dalam bidang sains dan matematika.',
+      subjects: ['Matematika', 'Fisika', 'Kimia', 'Biologi'],
+      color: 'bg-blue-500',
     },
     {
       icon: Users,
-      title: "IPS",
-      subtitle: "Ilmu Pengetahuan Sosial",
+      title: 'IPS',
+      subtitle: 'Ilmu Pengetahuan Sosial',
       description:
-        "Program studi yang mempelajari ilmu sosial, ekonomi, dan humaniora untuk memahami dinamika masyarakat.",
-      subjects: ["Sejarah", "Geografi", "Ekonomi", "Sosiologi"],
-      color: "bg-green-500",
+        'Program studi yang mempelajari ilmu sosial, ekonomi, dan humaniora untuk memahami dinamika masyarakat.',
+      subjects: ['Sejarah', 'Geografi', 'Ekonomi', 'Sosiologi'],
+      color: 'bg-green-500',
     },
     {
       icon: Globe,
-      title: "Bahasa",
-      subtitle: "Bahasa dan Sastra",
+      title: 'Bahasa',
+      subtitle: 'Bahasa dan Sastra',
       description:
-        "Program studi yang mengembangkan kemampuan berbahasa dan apresiasi sastra baik nasional maupun internasional.",
-      subjects: ["Bahasa Indonesia", "Bahasa Inggris", "Sastra", "Linguistik"],
-      color: "bg-purple-500",
+        'Program studi yang mengembangkan kemampuan berbahasa dan apresiasi sastra baik nasional maupun internasional.',
+      subjects: ['Bahasa Indonesia', 'Bahasa Inggris', 'Sastra', 'Linguistik'],
+      color: 'bg-purple-500',
     },
     {
       icon: Cpu,
-      title: "TKJ",
-      subtitle: "Teknik Komputer dan Jaringan",
+      title: 'TKJ',
+      subtitle: 'Teknik Komputer dan Jaringan',
       description:
-        "Program studi yang mempersiapkan siswa menguasai teknologi informasi dan komunikasi modern.",
-      subjects: ["Pemrograman", "Jaringan", "Hardware", "Software"],
-      color: "bg-orange-500",
+        'Program studi yang mempersiapkan siswa menguasai teknologi informasi dan komunikasi modern.',
+      subjects: ['Pemrograman', 'Jaringan', 'Hardware', 'Software'],
+      color: 'bg-orange-500',
     },
     {
       icon: Palette,
-      title: "Seni",
-      subtitle: "Seni dan Budaya",
+      title: 'Seni',
+      subtitle: 'Seni dan Budaya',
       description:
-        "Program studi yang mengembangkan kreativitas dan apresiasi seni dalam berbagai bentuk ekspresi.",
-      subjects: ["Seni Rupa", "Musik", "Tari", "Teater"],
-      color: "bg-pink-500",
+        'Program studi yang mengembangkan kreativitas dan apresiasi seni dalam berbagai bentuk ekspresi.',
+      subjects: ['Seni Rupa', 'Musik', 'Tari', 'Teater'],
+      color: 'bg-pink-500',
     },
     {
       icon: Atom,
-      title: "Unggulan",
-      subtitle: "Program Akselerasi",
+      title: 'Unggulan',
+      subtitle: 'Program Akselerasi',
       description:
-        "Program khusus untuk siswa berprestasi dengan kurikulum dipercepat dan pengayaan materi.",
-      subjects: ["Riset", "Olimpiade", "Kompetisi", "Leadership"],
-      color: "bg-red-500",
+        'Program khusus untuk siswa berprestasi dengan kurikulum dipercepat dan pengayaan materi.',
+      subjects: ['Riset', 'Olimpiade', 'Kompetisi', 'Leadership'],
+      color: 'bg-red-500',
     },
   ];
 
