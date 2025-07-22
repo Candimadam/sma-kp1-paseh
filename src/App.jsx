@@ -1,7 +1,6 @@
 import "./App.css";
 import { AboutSection } from "./components/AboutSection";
 import { ActivitiesSection } from "./components/ActivitiesSection";
-import { AdmissionSection } from "./components/AdmissionSection";
 import { ContactSection } from "./components/ContactSection";
 import { ExtracurricularSection } from "./components/ExtracurricularSection";
 import { Footer } from "./components/Footer";
