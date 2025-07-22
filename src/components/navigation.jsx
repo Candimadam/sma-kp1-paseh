@@ -102,8 +102,8 @@ export const Navigation = () => {
               ))}
               <div className="pt-4 pb-2">
                 <Button variant="outline" size="sm" className="w-full">
-                  <LogIn className="h-4 w-4" />
-                  Masuk
+                  <UserPenIcon className="h-4 w-4" />
+                  Registrasi Sekarang
                 </Button>
               </div>
             </div>
