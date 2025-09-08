@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, UserPenIcon, Moon, Sun } from 'lucide-react';
+import { Menu, X, UserPenIcon, Moon, Sun, ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { ToggleMode } from '@/components/toggle-mode';
 
@@ -82,8 +82,8 @@ export const Navigation = () => {
             {/* Login Button & Dark Mode Button */}
             <div className="hidden md:flex flex-1/5 justify-end items-center gap-2">
               <Button variant="outline" size="sm" onClick={handleRegisterClick}>
-                <UserPenIcon className="h-4 w-4" />
-                Registrasi Sekarang
+                Daftar Sekarang
+                <ArrowRight className='size-4' />
               </Button>
               <ToggleMode />
             </div>
@@ -124,8 +124,8 @@ export const Navigation = () => {
                     className="w-full dark:text-blue-200 dark:border-blue-400 dark:bg-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white"
                     onClick={handleRegisterClick}
                   >
-                    <UserPenIcon className="h-4 w-4" />
-                    Registrasi Sekarang
+                    Daftar Sekarang
+                    <ArrowRight className='size-4' />
                   </Button>
                 </div>
               </div>
