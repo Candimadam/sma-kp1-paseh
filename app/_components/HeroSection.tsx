@@ -65,12 +65,8 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button
               variant="cta"
-              size="xl"
               onClick={() => {
-                window.open(
-                  'https://docs.google.com/forms/d/e/1FAIpQLSdza5iykgphFWPE82jYDEtoGS7M_wwqmeVylOijiNyzdDgiBQ/viewform',
-                  '_blank'
-                );
+                window.location.href = '/pendaftaran';
               }}
               className="group dark:bg-yellow-400 dark:text-neutral-900 dark:hover:bg-yellow-500"
             >
@@ -79,7 +75,6 @@ export const HeroSection = () => {
             </Button>
             <Button
               variant="outline"
-              size="xl"
               onClick={() => scrollToSection('#tentang')}
               className="bg-white/10 text-white border-white/30 hover:bg-white/20 backdrop-blur-sm dark:bg-neutral-800 dark:text-white dark:border-neutral-700 dark:hover:bg-neutral-700"
             >

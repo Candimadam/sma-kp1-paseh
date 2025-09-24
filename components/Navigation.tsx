@@ -81,7 +81,7 @@ export const Navigation = () => {
             </div>
             {/* Login Button & Dark Mode Button */}
             <div className="hidden md:flex flex-1/5 justify-end items-center gap-2">
-              <Button variant="outline" size="sm" onClick={handleRegisterClick}>
+              <Button variant="outline" size="sm" onClick={() => { window.location.href = '/pendaftaran'; }}>
                 Daftar Sekarang
                 <ArrowRight className='size-4' />
               </Button>
@@ -122,7 +122,7 @@ export const Navigation = () => {
                     variant="outline"
                     size="sm"
                     className="w-full dark:text-blue-200 dark:border-blue-400 dark:bg-neutral-900 dark:hover:bg-blue-600 dark:hover:text-white"
-                    onClick={handleRegisterClick}
+                    onClick={() => { window.location.href = '/pendaftaran'; }}
                   >
                     Daftar Sekarang
                     <ArrowRight className='size-4' />

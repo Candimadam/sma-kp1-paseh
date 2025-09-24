@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 import { loginSchema, LoginSchema } from "@/schemas/login.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Eye, Shield } from "lucide-react";
+import { Eye, Shield, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -50,12 +50,12 @@ export default function LoginPage() {
             <div className="w-full max-w-md">
                 <Card className="shadow-lg">
                     <CardHeader className="text-center space-y-2">
-                        <div className="mx-auto w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
-                            <Shield className="w-6 h-6 text-primary-foreground" />
+                        <div className="mx-auto w-12 h-12 bg-blue-500 dark:bg-yellow-300 rounded-full flex items-center justify-center mb-4">
+                            <User className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <CardTitle className="text-2xl font-bold">Login Admin</CardTitle>
+                        <CardTitle className="text-2xl font-bold text-blue-500 dark:text-yellow-300">Login Admin</CardTitle>
                         <CardDescription className="text-muted-foreground">
-                            Masuk untuk akses dashboard admin
+                            Masuk untuk mengakses dashboard pendaftaran siswa
                         </CardDescription>
                     </CardHeader>
                     <Form {...form}>
@@ -104,7 +104,13 @@ export default function LoginPage() {
                             </CardContent>
 
                             <CardFooter className="flex flex-col space-y-4 mt-4">
-                                <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>Masuk</Button>
+                                <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 dark:bg-yellow-300 dark:hover:bg-yellow-500" disabled={form.formState.isSubmitting}>Masuk</Button>
+                                <p className="text-center text-sm text-gray-400">
+                                    Belum punya akun?{" "}
+                                    <a href="/register" className="text-blue-500 hover:text-blue-800 dark:text-yellow-300 dark:hover:text-yellow-500 font-medium">
+                                        Daftar di sini
+                                    </a>    
+                                </p>
                             </CardFooter>
                         </form>
                     </Form>

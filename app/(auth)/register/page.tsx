@@ -59,11 +59,11 @@ export default function RegisterPage() {
             <div className="w-full max-w-md">
                 <Card className="shadow-lg">
                     <CardHeader className="text-center space-y-2">
-                        <div className="mx-auto w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
-                            <UserPlus className="w-6 h-6 text-secondary-foreground" />
+                        <div className="mx-auto w-12 h-12 bg-blue-500 dark:bg-yellow-300 rounded-full flex items-center justify-center mb-4">
+                            <UserPlus className="w-6 h-6 text-primary-foreground" />
                         </div>
-                        <CardTitle className="text-2xl font-bold">Create Admin Account</CardTitle>
-                        <CardDescription className="text-muted-foreground">Register for admin access to the system</CardDescription>
+                        <CardTitle className="text-2xl font-bold text-blue-500 dark:text-yellow-300">Daftar admin</CardTitle>
+                        <CardDescription className="text-muted-foreground">Daftar untuk mengakses dashboard pendaftaran siswa</CardDescription>
                     </CardHeader>
 
                     <Form {...form}>
@@ -152,7 +152,16 @@ export default function RegisterPage() {
                             </CardContent>
 
                             <CardFooter className="flex flex-col space-y-4 mt-4">
-                                <Button type="submit" className="w-full" disabled={form.formState.isSubmitting}>Masuk</Button>
+                                <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 dark:bg-yellow-300 dark:hover:bg-yellow-500" disabled={form.formState.isSubmitting}>Masuk</Button>
+                                <p className="text-center text-sm text-gray-400">
+                                    Sudah punya akun?{" "}
+                                    <a
+                                        href="/login"
+                                        className="text-blue-500 hover:text-blue-800 dark:text-yellow-300 dark:hover:text-yellow-500 font-medium"
+                                    >
+                                        Masuk di sini
+                                    </a>
+                                </p>
                             </CardFooter>
                         </form>
                     </Form>
