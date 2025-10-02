@@ -5,9 +5,10 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { authClient } from "@/lib/auth-client"
-import { registerSchema, RegisterSchema } from "@/schemas/register.schema"
+import prisma from "@/lib/prisma"
+import { registerSchema, RegisterSchema } from "@/trpc/schemas/register.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { UserPlus, EyeOff, Eye, Link } from "lucide-react"
+import { UserPlus, Eye } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
@@ -49,7 +50,17 @@ export default function RegisterPage() {
             return
         }
 
+        await prisma.user.update({
+            where: {
+                id: data.user.id
+            },
+            data: {
+                role: "admin"
+            }
+        })
+
         if (data) {
+            toast.info(`Selamat datang, ${data.user.name}!`)
             router.push("/dashboard")
         }
     }
@@ -152,7 +163,9 @@ export default function RegisterPage() {
                             </CardContent>
 
                             <CardFooter className="flex flex-col space-y-4 mt-4">
-                                <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 dark:bg-yellow-300 dark:hover:bg-yellow-500" disabled={form.formState.isSubmitting}>Masuk</Button>
+                                <Button type="submit" className="w-full bg-blue-500 hover:bg-blue-800 dark:bg-yellow-300 dark:hover:bg-yellow-500" disabled={form.formState.isSubmitting}>
+                                    {form.formState.isSubmitting ? "Mendaftar..." : "Daftar"}
+                                </Button>
                                 <p className="text-center text-sm text-gray-400">
                                     Sudah punya akun?{" "}
                                     <a

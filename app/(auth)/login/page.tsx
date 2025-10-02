@@ -5,7 +5,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
-import { loginSchema, LoginSchema } from "@/schemas/login.schema";
+import { loginSchema, LoginSchema } from "@/trpc/schemas/login.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, Shield, User } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -41,7 +41,8 @@ export default function LoginPage() {
         }
 
         if (data) {
-            router.push(data.url ?? "/dashboard")
+            toast.success(`Selamat datang, ${data.user.name}!`)
+            router.push("/dashboard")
         }
     }
 
@@ -109,7 +110,7 @@ export default function LoginPage() {
                                     Belum punya akun?{" "}
                                     <a href="/register" className="text-blue-500 hover:text-blue-800 dark:text-yellow-300 dark:hover:text-yellow-500 font-medium">
                                         Daftar di sini
-                                    </a>    
+                                    </a>
                                 </p>
                             </CardFooter>
                         </form>
