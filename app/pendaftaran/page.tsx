@@ -4,7 +4,7 @@ import { HydrateClient, prefetch, trpc } from "@/trpc/server";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-export default async function PendaftaranSiswa() {
+export default function PendaftaranSiswa() {
     prefetch(trpc.registration.getAllRegistrationsPublic.queryOptions());
 
     return (
