@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
+    "postinstall": "prisma generate",
     "docker:compose:up": "docker compose up -d",
     "docker:compose:down": "docker compose down"
   },
