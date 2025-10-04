@@ -91,7 +91,7 @@ export function EditRegistrationForm({ registration }: EditRegistrationFormProps
     const isLoading = studentUpdateRegisterMutation.isPending || form.formState.isSubmitting
 
     return (
-        <div className="w-full bg-background p-6 md:p-8">
+        <div className="w-full p-6 md:p-8 bg-neutral-50 dark:bg-neutral-800">
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     {/* Data Siswa */}

@@ -17,32 +17,44 @@ export function MobileTopbar() {
     }
 
     return (
-        <div className="md:hidden fixed inset-x-0 top-0 z-20 bg-white border-b border-gray-200">
+        <div className="md:hidden fixed inset-x-0 top-0 z-20 bg-neutral-50 dark:bg-neutral-900 border-b border-gray-200 dark:border-gray-800">
             <div className="flex items-center justify-between px-4 py-3">
-                <h2 className="text-lg font-semibold text-blue-600">Dashboard</h2>
+                <h2 className="text-lg font-semibold text-blue-500 dark:text-yellow-400">Dashboard</h2>
                 <button
                     aria-label={mobileNavOpen ? "Tutup menu" : "Buka menu"}
                     onClick={() => setMobileNavOpen((s) => !s)}
-                    className="p-2 rounded-md border border-gray-200"
+                    className="p-2 rounded-md border border-gray-200 dark:border-gray-700 bg-neutral-50 dark:bg-neutral-900"
                 >
                     {mobileNavOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
             </div>
             {mobileNavOpen && (
                 <nav className="px-4 pb-3 space-y-2">
-                    <Link href="/dashboard" className={cn("block px-3 py-2 rounded-md hover:bg-gray-50", isActive("/dashboard") && "bg-gray-100 font-medium")}>
+                    <Link
+                        href="/dashboard"
+                        className={cn(
+                            "block px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800",
+                            isActive("/dashboard") && "text-blue-500 dark:text-yellow-400 font-medium"
+                        )}
+                    >
                         Data Siswa
                     </Link>
-                    <Link href="/dashboard/statistik" className={cn("block px-3 py-2 rounded-md hover:bg-gray-50", isActive("/dashboard/statistik") && "bg-gray-100 font-medium")}>
+                    <Link
+                        href="/dashboard/statistik"
+                        className={cn(
+                            "block px-3 py-2 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800",
+                            isActive("/dashboard/statistik") && "text-blue-500 dark:text-yellow-400 font-medium"
+                        )}
+                    >
                         Statistik
                     </Link>
                     <Button
-                        className="mt-2 w-full bg-red-600 hover:bg-red-700 text-white"
+                        className="mt-2 w-full bg-red-600 hover:bg-red-700 text-white dark:bg-red-700 dark:hover:bg-red-800"
                         onClick={async () => {
                             await authClient.signOut({
                                 fetchOptions: {
                                     onSuccess: () => {
-                                        router.push("/login"); // redirect to login page
+                                        router.push("/login");
                                     },
                                 },
                             });
