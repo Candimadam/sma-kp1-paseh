@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
-import prisma from "./lib/prisma";
+import db from "./lib/db";
 
 export async function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname === "/") {
+    return NextResponse.next();
+  }
+
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-  const isAnyUser = (await prisma.user.count()) > 0;
+  const isAnyUser = (await db.user.count()) > 0;
 
   if (
     session &&
@@ -27,13 +31,13 @@ export async function middleware(request: NextRequest) {
 
   if (
     session &&
-    request.nextUrl.pathname === "/dashboard" &&
+    request.nextUrl.pathname.startsWith("/dashboard") &&
     session.user.role !== "admin"
   ) {
     return NextResponse.redirect(new URL("/", request.url));
   }
 
-  if (!session && request.nextUrl.pathname === "/dashboard") {
+  if (!session && request.nextUrl.pathname.startsWith("/dashboard")) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
@@ -42,5 +46,5 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   runtime: "nodejs",
-  matcher: ["/register", "/login", "/dashboard"],
+  matcher: ["/((?!api|trpc|_next/static|_next/image).*)"], // hanya middleware di-ran pada route frontend
 };

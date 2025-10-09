@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
-import prisma from "@/lib/prisma";
+import prisma from "@/lib/db";
 import { registerSchema, RegisterSchema } from "@/trpc/schemas/register.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { UserPlus, Eye } from "lucide-react";
@@ -27,6 +27,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { createAdmin } from "./_actions/register.action";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -44,39 +45,35 @@ export default function RegisterPage() {
   });
 
   async function onSubmit(values: RegisterSchema) {
-    if (values.password !== values.confirmPassword) {
-      form.setError("confirmPassword", {
-        message: "Password tidak sama",
+    const result = await createAdmin({
+      username: values.name,
+      email: values.email,
+      password: values.password,
+    });
+
+    if (!result.success) {
+      toast.error("Gagal membuat akun admin", {
+        description: result.message,
       });
       return;
     }
-
-    const { data, error } = await authClient.signUp.email({
-      name: values.name,
+    const { data, error } = await authClient.signIn.email({
       email: values.email,
       password: values.password,
     });
 
     if (error) {
-      toast.error("Gagal daftar!", {
-        description: error.message,
+      toast.error("Gagal masuk setelah membuat akun admin", {
+        description: "coba masuk secara manual",
       });
+      router.push("/login");
       return;
     }
 
-    await prisma.user.update({
-      where: {
-        id: data.user.id,
-      },
-      data: {
-        role: "admin",
-      },
-    });
+    toast.success(`Selamat datang, ${data.user?.name || "Admin"}!`);
 
-    if (data) {
-      toast.info(`Selamat datang, ${data.user.name}!`);
-      router.push("/dashboard");
-    }
+    form.reset();
+    router.push("/dashboard");
   }
 
   return (

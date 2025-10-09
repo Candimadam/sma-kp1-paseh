@@ -1,4 +1,4 @@
-import prisma from "@/lib/prisma";
+import db from "@/lib/db";
 import { faker } from "@faker-js/faker";
 import cliProgress from "cli-progress";
 
@@ -49,7 +49,7 @@ async function main() {
       mode: "age",
     });
 
-    await prisma.registration.create({
+    await db.registration.create({
       data: {
         nisn,
         namaLengkap,
@@ -92,5 +92,5 @@ main()
     process.exit(1);
   })
   .finally(async () => {
-    await prisma.$disconnect();
+    await db.$disconnect();
   });
