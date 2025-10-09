@@ -1,4 +1,4 @@
-import { Gender } from "@/lib/generated/prisma";
+import { Gender, RegistrationStatus } from "@/lib/generated/prisma";
 import z from "zod";
 
 export const studentRegisterSchema = z.object({
@@ -23,5 +23,6 @@ export const studentRegisterSchema = z.object({
 export const studentUpdateRegisterSchema = studentRegisterSchema
   .partial()
   .extend({
+    status: z.enum(RegistrationStatus).optional(),
     id: z.cuid(),
   });

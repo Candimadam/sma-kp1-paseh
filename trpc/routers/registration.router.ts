@@ -110,7 +110,7 @@ export const registrationRouter = createTRPCRouter({
     .input(
       z.object({
         id: z.string(),
-      })
+      }),
     )
     .query(async ({ ctx, input }) => {
       const registration = await ctx.db.registration.findUnique({

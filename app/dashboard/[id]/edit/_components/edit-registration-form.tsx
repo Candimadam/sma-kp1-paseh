@@ -1,6 +1,10 @@
 "use client";
 
-import { Gender, Registration } from "@/lib/generated/prisma";
+import {
+  Gender,
+  Registration,
+  RegistrationStatus,
+} from "@/lib/generated/prisma";
 import { useTRPC } from "@/trpc/client";
 import { studentUpdateRegisterSchema } from "@/trpc/schemas/registration.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
+  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -67,6 +72,7 @@ export function EditRegistrationForm({
       tanggalLahir: registration.tanggalLahir,
       pekerjaanIbu: registration.pekerjaanIbu || "",
       nomorTelepon: registration.nomorTelepon || "",
+      status: registration.status,
     },
   });
 
@@ -343,6 +349,34 @@ export function EditRegistrationForm({
                       {...field}
                     />
                   </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="status"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Status Pendaftaran</FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl className="w-full">
+                      <SelectTrigger>
+                        <SelectValue placeholder="Pilih status pendaftaran" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {Object.keys(RegistrationStatus).map((key) => (
+                        <SelectItem value={key} key={key}>
+                          {enumToReadable(key)}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <FormDescription>(Hanya untuk admin)</FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
