@@ -73,7 +73,7 @@ export function EditRegistrationForm({
   const studentUpdateRegisterMutationOptions =
     trpc.registration.updateRegistration.mutationOptions({
       onSuccess: (data) => {
-        queryClient.Queries({
+        queryClient.invalidateQueries({
           queryKey: trpc.registration.pathKey(),
         });
         form.reset();
