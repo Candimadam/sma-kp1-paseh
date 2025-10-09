@@ -87,12 +87,21 @@ export function RegistrationContent() {
           Data Pendaftaran Siswa
         </h1>
         <div className="flex gap-2">
-          <Button
-            className="bg-green-600 hover:bg-green-700 text-white"
-            asChild
-          >
-            <Link href="/">Ekspor Excel</Link>
-          </Button>
+          {data.length > 0 && (
+            <Button
+              className="bg-green-600 hover:bg-green-700 text-white"
+              onClick={async () => {
+                const XLSX = await import("xlsx");
+
+                const ws = XLSX.utils.json_to_sheet(data);
+                const wb = XLSX.utils.book_new();
+                XLSX.utils.book_append_sheet(wb, ws, "Registrations");
+                XLSX.writeFile(wb, "registrations.xlsx");
+              }}
+            >
+              Ekspor Excel
+            </Button>
+          )}
           <Button className="bg-blue-600 hover:bg-blue-700 text-white" asChild>
             <Link href="/pendaftaran">+ Tambah Siswa</Link>
           </Button>
