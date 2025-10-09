@@ -96,7 +96,7 @@ function aggregateWeekly(regs: Registration[], weeks = 4) {
     start.setDate(today.getDate() - (weeks - idx - 1) * 7 - 6);
     const end = new Date(start);
     end.setDate(start.getDate() + 6);
-    return { label: `Minggu ${idx + 1}`, start, end, siswa: 0 };
+    return { label: `Minggu ${idx + 1}`, start, end, siswa: 0, target: 0 };
   });
   for (const r of regs) {
     const cd = startOfDay(new Date(r.createdAt)).getTime();
@@ -105,9 +105,15 @@ function aggregateWeekly(regs: Registration[], weeks = 4) {
     );
     if (bucket) bucket.siswa++;
   }
-  const avgDaily = regs.length / Math.max(1, 7 * weeks);
-  const target = Math.round(avgDaily * 7);
-  return buckets.map((b) => ({ minggu: b.label, siswa: b.siswa, target }));
+  // Target mingguan berdasarkan rata-rata pendaftar pada minggu tersebut
+  buckets.forEach((b) => {
+    b.target = Math.round((b.siswa / 7) * 7); // target mingguan berdasarkan data minggu tsb
+  });
+  return buckets.map((b) => ({
+    minggu: b.label,
+    siswa: b.siswa,
+    target: b.target,
+  }));
 }
 
 function aggregateStatus(regs: Registration[]) {
@@ -151,7 +157,9 @@ export function StatistikContent() {
   const yesterdayCount = registrations.filter((r) =>
     isSameDay(new Date(r.createdAt), yesterday),
   ).length;
-  const avgDaily = Math.round(registrations.length / Math.max(1, days));
+  // Hitung total pendaftar dalam rentang hari yang dipilih
+  const totalInRange = dailyData.reduce((sum, d) => sum + d.siswa, 0);
+  const avgDaily = Math.round(totalInRange / Math.max(1, days));
   const growthPct =
     yesterdayCount === 0
       ? 100
