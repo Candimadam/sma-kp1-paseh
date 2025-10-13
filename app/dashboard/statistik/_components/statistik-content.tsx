@@ -175,12 +175,12 @@ export function StatistikContent() {
     .slice(0, 5);
 
   return (
-    <div className="min-h-screen bg-background p-4 md:p-6 lg:p-8">
+    <div className="min-h-screen bg-background px-4 py-16 md:p-6 lg:p-8">
       <div className="mx-auto max-w-7xl space-y-6">
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tight text-foreground text-balance">
+            <h1 className="text-3xl font-bold tracking-tight text-foreground text-balance ">
               Statistik Pendaftaran Siswa Baru
             </h1>
             <p className="text-muted-foreground">
