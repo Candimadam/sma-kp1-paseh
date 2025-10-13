@@ -54,10 +54,14 @@ export const registrationRouter = createTRPCRouter({
       };
     }),
   deleteRegistration: adminProcedure
-    .input(studentRegisterSchema.pick({ nisn: true }))
+    .input(
+      z.object({
+        registrationId: z.cuid("Invalid ID"),
+      }),
+    )
     .mutation(async ({ ctx, input }) => {
       const existingRegistration = await ctx.db.registration.findUnique({
-        where: { nisn: input.nisn },
+        where: { id: input.registrationId },
         select: { id: true },
       });
 
