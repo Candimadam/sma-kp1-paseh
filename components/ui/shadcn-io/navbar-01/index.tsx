@@ -193,7 +193,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                       {navigationLinks.map((link, index) => (
                         <NavigationMenuItem key={index} className="w-full">
                           <button
-                            onClick={(e) => e.preventDefault()}
+                            onClick={() => router.push(link.href)}
                             className={cn(
                               "flex w-full items-center rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer no-underline",
                               link.active

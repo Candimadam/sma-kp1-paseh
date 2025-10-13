@@ -266,7 +266,7 @@ export function StatistikContent() {
         </div>
 
         {/* Charts Grid */}
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-4">
           {/* Daily Registrations Chart */}
           <Card className="border-border bg-card">
             <CardHeader>
