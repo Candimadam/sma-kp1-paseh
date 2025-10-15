@@ -189,15 +189,6 @@ export default function RegisterPage() {
                 >
                   {form.formState.isSubmitting ? "Mendaftar..." : "Daftar"}
                 </Button>
-                <p className="text-center text-sm text-gray-400">
-                  Sudah punya akun?{" "}
-                  <a
-                    href="/login"
-                    className="text-blue-500 hover:text-blue-800 dark:text-yellow-300 dark:hover:text-yellow-500 font-medium"
-                  >
-                    Masuk di sini
-                  </a>
-                </p>
               </CardFooter>
             </form>
           </Form>

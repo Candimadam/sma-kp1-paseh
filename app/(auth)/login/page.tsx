@@ -129,15 +129,6 @@ export default function LoginPage() {
                 >
                   Masuk
                 </Button>
-                <p className="text-center text-sm text-gray-400">
-                  Belum punya akun?{" "}
-                  <a
-                    href="/register"
-                    className="text-blue-500 hover:text-blue-800 dark:text-yellow-300 dark:hover:text-yellow-500 font-medium"
-                  >
-                    Daftar di sini
-                  </a>
-                </p>
               </CardFooter>
             </form>
           </Form>

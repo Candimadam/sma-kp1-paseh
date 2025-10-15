@@ -164,8 +164,8 @@ export function StatistikContent() {
     yesterdayCount === 0
       ? 100
       : Math.round(
-          ((todayCount - yesterdayCount) / Math.max(1, yesterdayCount)) * 100,
-        );
+        ((todayCount - yesterdayCount) / Math.max(1, yesterdayCount)) * 100,
+      );
 
   const recent = [...registrations]
     .sort(
@@ -270,10 +270,10 @@ export function StatistikContent() {
           {/* Daily Registrations Chart */}
           <Card className="border-border bg-card">
             <CardHeader>
-              <CardTitle className="text-card-foreground">
+              <CardTitle className="text-gray-900 dark:text-white">
                 Pendaftaran Harian
               </CardTitle>
-              <CardDescription className="text-muted-foreground">
+              <CardDescription className="text-gray-500 dark:text-gray-300">
                 Jumlah siswa yang mendaftar setiap hari (± {days} hari)
               </CardDescription>
             </CardHeader>
@@ -289,31 +289,31 @@ export function StatistikContent() {
                     <linearGradient id="fill-siswa" x1="0" y1="0" x2="0" y2="1">
                       <stop
                         offset="5%"
-                        stopColor="hsl(var(--chart-1))"
+                        stopColor="#3b82f6"
+                        className="dark:stopColor-[#facc15]"
                         stopOpacity={0.32}
                       />
                       <stop
                         offset="95%"
-                        stopColor="hsl(var(--chart-1))"
+                        stopColor="#3b82f6"
+                        className="dark:stopColor-[#facc15]"
                         stopOpacity={0}
                       />
                     </linearGradient>
                   </defs>
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="hsl(var(--border))"
+                    className="stroke-gray-300 dark:stroke-gray-700"
                     opacity={0.3}
                   />
                   <XAxis dataKey="date" />
                   <YAxis />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent />}
-                  />
+                  <ChartTooltip cursor={false} content={<ChartTooltipContent />} />
                   <Area
                     type="monotone"
                     dataKey="siswa"
-                    stroke="var(--color-siswa)"
+                    stroke="#3b82f6"
+                    className="dark:stroke-[#facc15]"
                     strokeWidth={2}
                     fill="url(#fill-siswa)"
                   />
@@ -325,25 +325,25 @@ export function StatistikContent() {
           {/* Weekly Registrations Chart */}
           <Card className="border-border bg-card">
             <CardHeader>
-              <CardTitle className="text-card-foreground">
+              <CardTitle className="text-gray-900 dark:text-white">
                 Pendaftaran Mingguan
               </CardTitle>
-              <CardDescription className="text-muted-foreground">
+              <CardDescription className="text-gray-500 dark:text-gray-300">
                 Perbandingan dengan target mingguan
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ChartContainer
                 config={{
-                  siswa: { label: "Realisasi", color: "hsl(var(--chart-1))" },
-                  target: { label: "Target", color: "hsl(var(--chart-2))" },
+                  siswa: { label: "Realisasi", color: "#3b82f6" },
+                  target: { label: "Target", color: "#60a5fa" },
                 }}
                 className="h-[300px] w-full"
               >
                 <BarChart data={weeklyData}>
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="hsl(var(--border))"
+                    className="stroke-gray-300 dark:stroke-gray-700"
                     opacity={0.3}
                   />
                   <XAxis dataKey="minggu" />
@@ -351,12 +351,12 @@ export function StatistikContent() {
                   <ChartTooltip content={<ChartTooltipContent />} />
                   <Bar
                     dataKey="siswa"
-                    fill="var(--color-siswa)"
+                    className="fill-blue-500 dark:fill-[#facc15]"
                     radius={[4, 4, 0, 0]}
                   />
                   <Bar
                     dataKey="target"
-                    fill="var(--color-target)"
+                    className="fill-blue-300 dark:fill-yellow-200"
                     radius={[4, 4, 0, 0]}
                   />
                   <ChartLegend content={<ChartLegendContent />} />
@@ -365,27 +365,27 @@ export function StatistikContent() {
             </CardContent>
           </Card>
 
+          {/* Status Chart */}
           <Card className="border-border bg-card lg:col-span-2">
             <CardHeader>
-              <CardTitle className="text-card-foreground">
+              <CardTitle className="text-gray-900 dark:text-white">
                 Distribusi Status Pendaftaran
               </CardTitle>
-              <CardDescription className="text-muted-foreground">
-                Jumlah pendaftar berdasarkan status: TERDAFTAR, DITERIMA,
-                DITOLAK
+              <CardDescription className="text-gray-500 dark:text-gray-300">
+                Jumlah pendaftar berdasarkan status: TERDAFTAR, DITERIMA, DITOLAK
               </CardDescription>
             </CardHeader>
             <CardContent>
               <ChartContainer
                 config={{
-                  jumlah: { label: "Jumlah", color: "hsl(var(--chart-1))" },
+                  jumlah: { label: "Jumlah", color: "#3b82f6" },
                 }}
                 className="h-[300px] w-full"
               >
                 <BarChart data={statusData} layout="vertical">
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="hsl(var(--border))"
+                    className="stroke-gray-300 dark:stroke-gray-700"
                     opacity={0.3}
                   />
                   <XAxis type="number" />
@@ -393,7 +393,7 @@ export function StatistikContent() {
                   <ChartTooltip content={<ChartTooltipContent />} />
                   <Bar
                     dataKey="jumlah"
-                    fill="var(--color-jumlah)"
+                    className="fill-blue-500 dark:fill-[#facc15]"
                     radius={[0, 4, 4, 0]}
                   />
                 </BarChart>
