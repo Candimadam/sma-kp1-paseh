@@ -12,6 +12,7 @@ datasource db {
 generator erd {
   provider = "prisma-erd-generator"
   output = "../ERD.png"
+  // ignoreEnums = true
 }
 
 model User {
@@ -92,7 +93,7 @@ model Registration {
   tanggalLahir   DateTime
   alamat         String
   status         RegistrationStatus @default(TERDAFTAR)
-  
+
   namaAyah       String
   pekerjaanAyah  String?         // opsional, ada yang mungkin tidak diisi
   namaIbu        String
