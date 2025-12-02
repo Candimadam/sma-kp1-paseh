@@ -11,6 +11,7 @@ import {
   Instagram,
   Youtube,
   ExternalLink,
+  Target,
 } from 'lucide-react';
 
 export const ContactSection = () => {
@@ -24,19 +25,19 @@ export const ContactSection = () => {
     {
       icon: Phone,
       title: 'Telepon',
-      info: '(021) 7654-3210 \n (021) 7654-3211',
+      info: '0821-2982-8648',
       action: null,
     },
     {
       icon: Mail,
       title: 'Email',
-      info: 'info @SMAKP1PASEH.sch.id \n ppdb @SMAKP1PASEH.sch.id',
+      info: 'info @SMAKP1PASEH.sch.id',
       action: null,
     },
     {
       icon: Clock,
       title: 'Jam Operasional',
-      info: 'Senin - Jumat: 07.00 - 16.00 WIB \n Sabtu: 07.00 - 12.00 WIB',
+      info: 'Senin - Jumat: 07.00 - 14.00 WIB \n Sabtu: 07.00 - 12.00 WIB',
       action: null,
     },
   ];
@@ -45,36 +46,36 @@ export const ContactSection = () => {
     {
       icon: Facebook,
       name: 'Facebook',
-      handle: '@Nama Facebook',
-      url: '',
+      handle: 'SMA KP 1 Paseh',
+      url: 'https://www.facebook.com/share/1CBpz9cHfa/',
       color:
         'bg-blue-600 hover:bg-blue-700 dark:bg-blue-800 dark:hover:bg-blue-900',
     },
     {
       icon: Instagram,
       name: 'Instagram',
-      handle: '@Nama Instagram',
-      url: '',
+      handle: '@exposekp',
+      url: 'https://www.instagram.com/exsposekp?igsh=MWF0bHR0b2FrYXdjZA==',
       color:
         'bg-pink-600 hover:bg-pink-700 dark:bg-pink-800 dark:hover:bg-pink-900',
     },
     {
       icon: Youtube,
       name: 'YouTube',
-      handle: 'Nama youtube',
-      url: '',
+      handle: 'MrCepics',
+      url: 'https://youtube.com/@mrcepics?si=UShe-OvYaQ_VYnuO',
       color:
         'bg-red-600 hover:bg-red-700 dark:bg-red-800 dark:hover:bg-red-900',
     },
   ];
 
   return (
-    <section id="kontak" className="py-24 bg-background">
+    <section id="kontak" className="py-24 bg-neutral-200 dark:bg-neutral-900">
       <div className="mx-auto px-8">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-5xl font-extrabold mb-4 text-primary/80">
-            Alamat & <span className="text-blue-500">Kontak Sekolah</span>
+            Alamat & <span className="text-blue-500 dark:text-yellow-500">Kontak Sekolah</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Hubungi kami untuk informasi lebih lanjut tentang pendaftaran,
@@ -153,7 +154,7 @@ export const ContactSection = () => {
                   {socialMedia.map((social, index) => (
                     <a
                       key={index}
-                      href={social.url}
+                      href={social.url} target="_blank"
                       className="flex items-center space-x-4 p-4 rounded-lg hover:bg-neutral-50 transition-colors group"
                     >
                       <div
@@ -182,24 +183,13 @@ export const ContactSection = () => {
                   Informasi Cepat
                 </h3>
                 <div className="space-y-4">
-                  <div className="p-4 bg-primary/5 rounded-lg">
-                    <div className="font-medium text-blue-500 mb-1">
-                      Hotline PPDB
-                    </div>
-                    <div className="text-sm text-primary/80">
-                      📞 0811-1234-5678
-                    </div>
-                    <div className="text-xs text-muted-foreground mt-1">
-                      24/7 selama masa pendaftaran
-                    </div>
-                  </div>
 
                   <div className="p-4 bg-orange-500/5 rounded-lg">
                     <div className="font-medium text-orange-500 mb-1">
                       WhatsApp Official
                     </div>
                     <div className="text-sm text-primary/80">
-                      💬 0812-3456-7890
+                      💬 0821-2982-8648
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">
                       Konsultasi & informasi
@@ -221,11 +211,6 @@ export const ContactSection = () => {
               </CardContent>
             </Card>
 
-            {/* CTA */}
-            <Button variant="cta" size="lg" className="w-full">
-              <Phone className="h-5 w-5 mr-2" />
-              Hubungi Sekarang
-            </Button>
           </div>
         </div>
       </div>

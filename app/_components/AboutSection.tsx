@@ -1,80 +1,54 @@
 "use client";
 
-import { Card, CardContent } from '@/components/ui/card';
-import { Target, Heart, Trophy, Globe } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Target, Heart, Trophy, Globe } from "lucide-react";
 
 export const AboutSection = () => {
   const values = [
     {
       icon: Target,
-      title: 'Visi',
-      description:
-        'Menjadi sekolah unggul yang menghasilkan lulusan berkarakter, berprestasi, dan siap menghadapi tantangan global.',
+      title: "Visi",
+      description: "Terwujudnya lulusan berprestasi dalam bidang akademik, olah raga serta cinta lingkungan dilandasi dengan iman dan taqwa.",
     },
     {
       icon: Heart,
-      title: 'Misi',
+      title: "Misi",
       description:
-        'Menyelenggarakan pendidikan berkualitas dengan mengembangkan potensi siswa secara holistik.',
+        "Mengembangkan Karakter dan Akhlak Mulia Murid, Menumbuhkan Semangan Religius dan Keimanan, Menanamkan Kecintaan Terhadap Lingkungan yang Berkualitas, Mewujudkan Murid yang Berprestasi, Mengembangkan Potensi non Akademik, Mewujudkan Murid yang Berprestasi dalam Olah Raga, Membina Hubungan Harmonis dengan Seluruh Pihak Dilingkungan Sekolah, Membangun Kemandirian dan Kepemimpinan",
     },
     {
       icon: Trophy,
-      title: 'Prestasi',
-      description:
-        'Meraih berbagai penghargaan tingkat regional dan nasional dalam bidang akademik dan non-akademik.',
+      title: "Prestasi",
+      description: "Meraih berbagai penghargaan tingkat regional dan nasional dalam bidang akademik dan non-akademik.",
     },
     {
       icon: Globe,
-      title: 'Unggulan',
-      description:
-        'Mempersiapkan siswa dengan wawasan global dan kemampuan berkompetisi di era digital.',
+      title: "Unggulan",
+      description: "Sekolah Energi Berdikari Adiwiyata Tingkat Kabupaten dan Provinsi",
     },
   ];
 
   return (
-    <section id="tentang" className="py-24 bg-neutral-50 dark:bg-neutral-900">
+    <section id="tentang" className="py-20 bg-neutral-200 dark:bg-neutral-900">
       <div className="mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Image */}
-          <div className="order-2 lg:order-1">
-            <div className="relative">
-              <img
-                src="https://www.psychologicalscience.org/redesign/wp-content/uploads/2011/04/ThinkstockPhotos-504382222-1024x683.jpg"
-                alt="Students studying at SMA Merdeka"
-                className="rounded-2xl shadow-lg w-full h-[400px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-2xl" />
-            </div>
-          </div>
-
           {/* Content */}
-          <div className="order-1 lg:order-2">
+          <div className="order-1 lg:order-2 col-span-full w-full">
             <div className="mb-8">
-              <h1 className="mb-2 text-primary/80 text-5xl font-extrabold dark:text-blue-300">
-                Tentang{' '}
-                <span className="text-blue-500 dark:text-blue-400">
-                  SMA KP 1 PASEH
-                </span>
+              <h1 className="mb-6 text-primary/80 text-5xl font-extrabold dark:text-blue-300">
+                Tentang <span className="text-blue-500 dark:text-yellow-400">SMA KP 1 PASEH</span>
               </h1>
               <p className="text-lg mb-6 text-muted-foreground dark:text-neutral-400">
-                SMA KP 1 PASEH adalah institusi pendidikan yang berkomitmen
-                untuk mengembangkan potensi setiap siswa menjadi individu yang
-                cerdas, berkarakter, dan siap menghadapi masa depan.
-              </p>
-              <p className="text-muted-foreground dark:text-neutral-400">
-                Dengan fasilitas modern, tenaga pengajar berkualitas, dan
-                kurikulum yang mengikuti perkembangan zaman, kami memberikan
-                pendidikan terbaik untuk generasi penerus bangsa.
+                SMA KP I Paseh didirikan pada tahun 1981 di bawah Yayasan Pembina Pendidikan Karya Pembangunan (YPPKP). Sekolah sempat berpindah lokasi beberapa kali hingga pada tahun 2001 dipindahkan ke kompleks SMP KP Ibun akibat
+                perubahan nama sekolah yang tidak sesuai dengan yayasan. Pada awal relokasi, sekolah menerima 55 siswa baru serta siswa mutasi. Sejak 2002, sekolah membangun ruang kelas secara mandiri dan pada 2011 menerima bantuan ruang
+                kelas dari Provinsi Jawa Barat. Hingga kini, SMA KP I Paseh telah mengalami 10 pergantian kepala sekolah, terus meningkatkan sarana prasarana, dan pada tahun ajaran 2022/2023 memiliki 322 siswa dengan akreditasi B.
               </p>
             </div>
 
             {/* Values Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {values.map((value, index) => (
-                <Card
-                  key={index}
-                  className="shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer bg-white dark:bg-neutral-800 dark:border dark:border-neutral-700"
-                >
+                <Card key={index} className="shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer bg-white dark:bg-neutral-800 dark:border dark:border-neutral-700">
                   <CardContent className="p-6 dark:text-neutral-200">
                     <div className="flex items-start space-x-4">
                       <div className="flex-shrink-0">
@@ -83,12 +57,8 @@ export const AboutSection = () => {
                         </div>
                       </div>
                       <div>
-                        <h3 className="font-semibold text-primary/80 mb-2 dark:text-blue-300">
-                          {value.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed dark:text-neutral-400">
-                          {value.description}
-                        </p>
+                        <h3 className="font-semibold text-primary/80 mb-2 dark:text-blue-300">{value.title}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed dark:text-neutral-400">{value.description}</p>
                       </div>
                     </div>
                   </CardContent>
