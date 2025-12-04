@@ -217,7 +217,7 @@ export const Navbar01 = React.forwardRef<HTMLElement, Navbar01Props>(
                 className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors cursor-pointer"
               >
                 <div className="text-2xl">{logo}</div>
-                <span className="font-bold text-xl">SMA KP 1 Paseh</span>
+                <span className="font-bold text-xl">SMA KP 1 PASEH</span>
               </button>
               {/* Navigation menu */}
               {!isMobile && (

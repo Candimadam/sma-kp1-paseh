@@ -84,7 +84,7 @@ export const HeroSection = () => {
               <div className="flex items-center justify-center mb-2">
                 <Award className="h-8 w-8 text-yellow-300 dark:text-yellow-400" />
               </div>
-              <div className="text-3xl font-bold dark:text-blue-200">30+</div>
+              <div className="text-3xl font-bold dark:text-blue-200">25+</div>
               <div className="text-white/80 dark:text-neutral-200">Prestasi</div>
             </div>
             <div className="text-center">

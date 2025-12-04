@@ -16,8 +16,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SMA KP 1 Paseh",
-  description: "Profil Sekolah SMA KP 1 Paseh",
+  title: "SMA KP 1 PASEH",
+  description: "Website Resmi Profil Sekolah SMA KP 1 PASEH",
+  icons: {
+    icon: "/halaman-utama/logo-sekolah.png",
+  },
 };
 
 export default function RootLayout({
